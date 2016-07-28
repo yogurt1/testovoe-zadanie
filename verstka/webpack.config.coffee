@@ -94,7 +94,7 @@ loaders = [{
   loader: 'cson'
 },{
   test: /\.(pug|jade)$/
-  loader: 'pug?static'
+  loader: 'pug'
 },{
   test: /\.html$/
   loader: 'html'
