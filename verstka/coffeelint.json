@@ -1,0 +1,10 @@
+{
+ "identation": {
+    "level": "error",
+    "value": 2
+  },
+  "line_endings": {
+    "value": "unix",
+    "level": "error"
+  }
+}

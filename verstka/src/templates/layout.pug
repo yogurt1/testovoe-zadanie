@@ -1,0 +1,9 @@
+doctype html
+html(lang="ru", manifest=(!production ? "" : "dist/manifest.appcache"))
+  head
+    title= guestbook
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="shortcut icon", href=require('images/favicon.ico'))
+  body
+    block content
