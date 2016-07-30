@@ -6,4 +6,5 @@ html(lang="ru", manifest=(!production ? "" : "dist/manifest.appcache"))
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel="shortcut icon", href=require('images/favicon.ico'))
   body
-    block content
+    .page-wrap
+      block content

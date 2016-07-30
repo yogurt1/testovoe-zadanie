@@ -6,7 +6,7 @@ if ($connection->connect_error)
 }
 
 /* @param SQL query
- * do SQL script and return state
+ * do SQL script and return connection when true 
  */
 function query($query)
 {

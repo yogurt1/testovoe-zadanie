@@ -1,0 +1,19 @@
+categories: [
+  'Город'
+  'Регион'
+  'Происшествия'
+  'Спорт'
+  'Веб'
+  'Интервью'
+]
+news: [{
+  date: 'Today', content: 'Hello, world'
+},{
+  date: 'Yesterday', content: 'Heheeey'
+},{
+  date: 'Yesterday', content: 'Heheeey'
+},{
+  date: 'Yesterday', content: 'Heheeey'
+},{
+  date: 'Yesterday', content: 'Heheeey'
+}]

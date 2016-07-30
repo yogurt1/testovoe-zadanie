@@ -1,0 +1,8 @@
+mixin link(target)
+  li: a(href="#", class!=attributes.class) #{target}
+
+mixin arcticle(arcticle)
+  .arcticle-wrap
+    span.date= arcticle.date
+    p.arcticle= arcticle.content
+    a(href="#").read-next Читать дальше

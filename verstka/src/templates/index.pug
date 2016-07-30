@@ -9,17 +9,14 @@ block content
       each category in categories 
         +link(category)
   main.page-main
-    section.news
-      each arcticle in news
-        +arcticle(arcticle)
-    section.pagination
-      ul
-        +link(1)(class="active")
-        each i in [2,3,4,5]
-          +link(i)
-        +link("->")
-  section.sticky-footer: ul
-    each category in categories
-      +link(category)
+    each arcticle in news
+      +arcticle(arcticle)
+    ul.pagination
+      +link(1)(class="active")
+      each i in [2,3,4,5]
+        +link(i)
+      +link("->")
   footer.page-footer
-    span
+    ul
+      each category in categories
+        +link(category)

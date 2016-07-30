@@ -53,7 +53,7 @@ plugins =
       ServiceWorker: off
   ]
   devserver: [
-    "webpack-dev-server/client?http://localhost:3000"
+    "webpack-dev-server/client?http://x230:3000"
     "webpack/hot/only-dev-server"
   ]
   postcss: [
@@ -123,7 +123,6 @@ config =
   target: 'web'
   entry:
     bundle: [
-      'flexboxgrid'
       './src/index'
       './src/styles/index'
     ].concat if not production then plugins.devserver else []
@@ -140,6 +139,7 @@ config =
     noInfo: off
     progress: yes
     port: 3000
+    host: 'x230'
   debug: off #production
   postcss: -> plugins.postcss
   sassLoader:
