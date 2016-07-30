@@ -1,9 +1,5 @@
 <?php
-$connection = new mysqli('localhost', 'root', '');
-if ($connection->connect_error)
-{
-  die('Connection failed: ' . $connection->connect_error);
-}
+require_once 'connection.php';
 
 /* @param SQL query
  * do SQL script and return connection when true 
@@ -11,14 +7,16 @@ if ($connection->connect_error)
 function query($query)
 {
   global $connection;
-  if ($connection->query($query) === TRUE)
+  if ($connection->multi_query($query) === TRUE)
   {
-    echo $query . ' |> success';
+    //$query . ' |> success';
+    echo "|> success \n";
     return $connection;
   }
   else
   {
-    echo $query . ' |> error';
+    echo $query . " |> error \n";
+    echo $connection->error;
     return false;
   }
 }
