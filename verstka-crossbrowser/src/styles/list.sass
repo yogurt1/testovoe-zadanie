@@ -1,0 +1,36 @@
+$radius: 4px
+
+.list
+  display: flex
+  flex-flow: row wrap
+  list-style-type: none
+  margin: 0
+  padding: 0
+  height: 90%
+  width: 100%
+  & li
+    display: flex
+    border: 1px solid black
+    flex-grow: 1
+    align-items: center
+    font-size: 1rem
+    & a
+      text-decoration: none
+      text-align: center
+      color: black
+      padding: .6em
+    &:first-child
+      border-bottom-left-radius: $radius
+      border-top-left-radius: $radius
+      background: black
+      & a
+        color: white
+    &:last-child
+      border-top-right-radius: $radius
+      border-bottom-right-radius: $radius
+
+.list:last-child li a.arrow:before
+  content: '\f061' //fontawesome arrow right
+
+.list:last-child li a.search:before
+  content: '\f002'

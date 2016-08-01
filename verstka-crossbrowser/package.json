@@ -1,0 +1,33 @@
+{
+  "name": "verstka-foundation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bs-config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "gulp serve",
+    "build": "gulp build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cssnano": "^3.7.3",
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-pug": "^3.0.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "postcss-cssnext": "^2.7.0",
+    "postcss-flexibility": "^1.1.0"
+  },
+  "dependencies": {
+    "browser-sync": "^2.14.0",
+    "font-awesome": "^4.6.3",
+    "normalize.css": "^4.2.0",
+    "reset.css": "^2.0.2"
+  }
+}
