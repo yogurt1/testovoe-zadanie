@@ -32,9 +32,11 @@ function toggle(&$status)
   switch ($status)
   {
     case 1:
+      echo "On\n";
       $status = 0;
       break;
     case 0:
+      echo "Off\n";
       $status = 1;
       break;
   }

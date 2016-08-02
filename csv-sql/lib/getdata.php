@@ -23,5 +23,6 @@ if (($handle = fopen('data.csv', 'r')) !== FALSE)
 }
 
 $random_row = $rows[rand(0, count($rows))]; // toggle status in random row
-toggle($random_row[$fields['status']]);
+$status = &$random_row[$fields['status']];
+toggle($status);
 ?>
