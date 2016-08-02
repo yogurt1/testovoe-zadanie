@@ -13,7 +13,7 @@ function query($query)
   {
     //$query . ' |> success';
     echo "|> success \n";
-    $state = $connection;
+    $state = $result;
   } else {
     echo $query . " |> error \n";
     echo $connection->error;
@@ -41,6 +41,6 @@ function mquery($query)
       }
     } while ($connection->more_results() && $connection->next_result());
   }
-  return $state;
+  return $sresult;
 }
 ?>

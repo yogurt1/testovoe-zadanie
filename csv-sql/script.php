@@ -8,10 +8,10 @@ require_once 'lib/getdata.php';
 // Migration
 mquery(file_get_contents('migration.sql'));
 
-/*foreach ($rows as $row) {
+foreach ($rows as $row) {
   insert($row);
-}*/
-insert($rows); // assembling one INSERT with multiple rows much faster than one INSERT per row
+}
+/*insert($rows); // assembling one INSERT with multiple rows much faster than one INSERT per row*/
 
 $connection->close();
 ?>

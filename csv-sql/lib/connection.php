@@ -1,5 +1,6 @@
 <?php
 $connection = new mysqli('localhost', 'root', '');
+$connection->set_charset('utf8');
 
 if ($connection->connect_error)
 {

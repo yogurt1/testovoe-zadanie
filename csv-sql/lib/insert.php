@@ -1,26 +1,31 @@
 <?php
 require_once 'connection.php';
+require_once 'functions.php';
 require_once 'query.php';
 require_once 'fields.php';
+require_once 'exists.php';
 
-function _insert($row) // old per-row insert
+function insert($row) // old per-row insert
 {
   global $connection;
-  $sql = 'insert into csv values (?, ?, ?, ?, ?)';
-  $stmt = $connection->prepare($sql);
-
-  if (!$stmt)
+  if (!exists($row))
   {
-    echo $sql . "\n";
-    printf('errno: %d, error: %s', $connection->errno, $connection->error);
-  }
+    $sql = 'insert into csv values (?, ?, ?, ?, ?)';
+    $stmt = $connection->prepare($sql);
 
-  $stmt->bind_param('sssii', $row[0], $row[1], $row[2], $row[3], $row[4]);
-  $stmt->execute();
-  $stmt->close();
+    if (!$stmt)
+    {
+      echo $sql . "\n";
+      printf('errno: %d, error: %s', $connection->errno, $connection->error);
+    }
+
+    $stmt->bind_param('sssii', $row[0], $row[1], $row[2], $row[3], $row[4]);
+    $stmt->execute();
+    $stmt->close();
+  }
 }
 
-function insert($rows)
+function minsert($rows)
 {
   global $connection, $fields;
   $values = array();
@@ -28,15 +33,14 @@ function insert($rows)
   foreach ($rows as $i => $row)
   {
     $sql .= '(';
-    foreach ($fields as $field => $i)
+    foreach ($fields as $field => $col)
     {
       switch ($field)
       {
         case 'fullname':
         case 'born':
         case 'email':
-          //$row[$i] = $connection->real_escape_string($row[$i]);
-          $row[$i] = '"' . $row[$i] . '"';
+          escapify($row[$col]);
           break;
       }
       $sql .= $row[$i];

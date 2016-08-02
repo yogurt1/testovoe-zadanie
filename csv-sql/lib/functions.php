@@ -1,4 +1,6 @@
 <?php
+require_once 'connection.php';
+
 function bitify(&$status)
 {
   if ($status == " On")
@@ -36,5 +38,12 @@ function toggle(&$status)
       $status = 1;
       break;
   }
+}
+
+function escapify(&$cell)
+{
+  global $connection;
+  $cell = $connection->real_escape_string($cell);
+  $cell = '"' . $cell . '"'; //stringify
 }
 ?>
