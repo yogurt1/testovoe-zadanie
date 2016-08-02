@@ -47,8 +47,6 @@ function insert($rows)
     $sql .= ',';
   }
   $sql = rtrim($sql, ',');
-  print_r($sql);
-  $connection->query($sql);
-  print_r($connection->error);
+  query($sql);
 }
 ?>

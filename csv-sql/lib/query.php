@@ -7,17 +7,40 @@ require_once 'connection.php';
 function query($query)
 {
   global $connection;
-  if ($connection->multi_query($query) === TRUE)
+  $result = $connection->query($query);
+  $state = null;
+  if ($result)
   {
     //$query . ' |> success';
     echo "|> success \n";
-    return $connection;
-  }
-  else
-  {
+    $state = $connection;
+  } else {
     echo $query . " |> error \n";
     echo $connection->error;
-    return false;
+    $state = false;
   }
+  print_r($result);
+  $result->close();
+  return $state;
+}
+
+function mquery($query)
+{
+  global $connection;
+  $result = $connection->multi_query($query);
+  $state = null;
+  if ($result)
+  {
+    do {
+      $sresult = $connection->store_result();
+      if ($sresult)
+      {
+        $sresult->free();
+      } else {
+        print_r($sresult);
+      }
+    } while ($connection->more_results() && $connection->next_result());
+  }
+  return $state;
 }
 ?>
