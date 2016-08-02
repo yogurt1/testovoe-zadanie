@@ -11,7 +11,7 @@ function bitify(&$status)
 }
 
 date_default_timezone_set('Europe/Moscow');
-$format = "d.m.Y H:i";
+$format = "Y-m-d H:i:s";
 
 function integrify(&$date) // convert date to timestamp
 {

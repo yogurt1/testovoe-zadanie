@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "browser-sync": "^2.14.0",
+    "flexibility": "^2.0.1",
     "font-awesome": "^4.6.3",
     "normalize.css": "^4.2.0",
     "reset.css": "^2.0.2"

@@ -1,14 +1,9 @@
 <?php
-include_once 'functions.php';
+require_once 'functions.php';
+require_once 'fields.php';
 $temp = null;
 $rows = [];
-$fields = [
-  'fullname' => 0,
-  'email' => 1,
-  'born' => 2,
-  'registred' => 3,
-  'status' => 4
-];
+
 
 if (($handle = fopen('data.csv', 'r')) !== FALSE)
 {
